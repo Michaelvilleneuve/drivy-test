@@ -18,7 +18,11 @@ class Rental < Base
   end
 
   def pretty
-    { id: @id, price: price }
+    { 
+      id: @id, 
+      price: price,
+      commission: @commission.pretty
+    }
   end
 
   def nb_of_days

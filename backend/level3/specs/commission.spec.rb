@@ -1,4 +1,5 @@
 Dir["./models/*.rb"].each { |file| require file }
+require 'json/ext'
 
 describe Commission do
   before do
@@ -29,5 +30,9 @@ describe Commission do
 
   it "should assign what is left to Drivy" do
     expect(@commission.to_drivy).to eq(@expected[:drivy])
+  end
+
+  it "outputs the correct format" do
+    expect(@commission.pretty.to_json).to eq '{"insurance_fee":30.0,"assistance_fee":1,"drivy_fee":29.0}'
   end
 end

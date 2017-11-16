@@ -18,4 +18,12 @@ class Commission < Base
   def to_drivy
     @total - to_insurance - to_roadside_assistance
   end
+
+  def pretty
+    {
+      insurance_fee: to_insurance,
+      assistance_fee: to_roadside_assistance,
+      drivy_fee: to_drivy
+    }
+  end
 end
