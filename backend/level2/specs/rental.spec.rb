@@ -6,7 +6,7 @@ describe Rental do
     @rental = Rental.new({ 
       'id' => 1, 
       'car_id' => 1, 
-      'start_date' => '2017-12-8', 
+      'start_date' => '2017-12-9', 
       'end_date' => '2017-12-10',
       'distance' => 100 
     })

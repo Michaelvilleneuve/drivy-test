@@ -20,7 +20,7 @@ class Rental < Base
   end
 
   def nb_of_days
-    (Date.parse(@end_date).to_time.to_i - Date.parse(@start_date).to_time.to_i) / 86400
+    (Date.parse(@end_date).to_time.to_i - Date.parse(@start_date).to_time.to_i) / 86400 + 1
   end
 
   def price_of_days
