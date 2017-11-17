@@ -12,7 +12,7 @@ class Rental < Base
   end
 
   def price
-    price_of_days + price_of_kms
+    (price_of_days + price_of_kms).to_i
   end
 
   def pretty

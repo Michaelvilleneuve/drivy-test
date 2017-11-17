@@ -8,15 +8,15 @@ class Commission < Base
   end
 
   def to_insurance
-    @total / 2
+    (@total / 2).to_i
   end
 
   def to_roadside_assistance
-    @rental.nb_of_days
+    @rental.nb_of_days * 100
   end
 
   def to_drivy
-    @total - to_insurance - to_roadside_assistance
+    (@total - to_insurance - to_roadside_assistance).to_i
   end
 
   def pretty

@@ -3,7 +3,7 @@ require 'date'
 class Rental < Base
   attr_reader :commission
 
-  DEDUCTIBLE_COST_PER_DAY = 4
+  DEDUCTIBLE_COST_PER_DAY = 400
 
   def initialize(rental)
     @id         = rental['id']
@@ -18,7 +18,7 @@ class Rental < Base
   end
 
   def price
-    price_without_deductible + deductible_cost
+    (price_without_deductible + deductible_cost).to_i
   end
 
   def price_without_deductible
@@ -33,10 +33,10 @@ class Rental < Base
     { 
       id: @id, 
       price: price,
-      commission: @commission.pretty,
       options: {
         deductible_reduction: deductible_cost
-      }
+      },
+      commission: @commission.pretty,
     }
   end
 
