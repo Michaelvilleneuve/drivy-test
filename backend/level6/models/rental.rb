@@ -39,4 +39,8 @@ class Rental < Base
   def self.find(a_rental_id)
     self.all(Rental).find { |rental| rental.id == a_rental_id }
   end
+
+  def destroy
+    super
+  end
 end

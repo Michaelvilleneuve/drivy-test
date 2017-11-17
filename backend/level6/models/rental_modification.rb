@@ -13,6 +13,7 @@ class RentalModification < Base
     temporary_rental = TemporaryRental.new @rental.params.merge(@params.except('id', 'rental_id'))
     @payments = Payment.adjust(@rental.payments, temporary_rental.payments)
     @rental.update(@params.except('id', 'rental_id'), @payments)
+    temporary_rental.destroy
     self
   end
 
