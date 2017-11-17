@@ -1,3 +1,11 @@
+## Instructions
+
+`bundle install`
+`ruby main.rb`
+
+To run tests
+`rspec specs/*.spec.rb`
+
 # Level 5
 
 We want to know how much money must be debited/credited for each actor (driver/owner/insurance/assistance/drivy).

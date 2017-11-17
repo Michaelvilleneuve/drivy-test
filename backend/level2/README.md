@@ -1,3 +1,11 @@
+## Instructions
+
+`bundle install`
+`ruby main.rb`
+
+To run tests
+`rspec specs/*.spec.rb`
+
 # Level 2
 
 To be as competitive as possible, we decide to have a decreasing pricing for longer rentals.

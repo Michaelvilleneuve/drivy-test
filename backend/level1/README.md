@@ -1,3 +1,11 @@
+## Instructions
+
+`bundle install`
+`ruby main.rb`
+
+To run tests
+`rspec specs/*.spec.rb`
+
 # Intro
 
 We are building a peer-to-peer car rental service. Let's call it Drivy :)

@@ -1,3 +1,11 @@
+## Instructions
+
+`bundle install`
+`ruby main.rb`
+
+To run tests
+`rspec specs/*.spec.rb`
+
 # Level 3
 
 The car owner now wants his money.

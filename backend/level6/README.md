@@ -1,3 +1,11 @@
+## Instructions
+
+`bundle install`
+`ruby main.rb`
+
+To run tests
+`rspec specs/*.spec.rb`
+
 # Level 6
 
 Some users want to modify the dates/distance for a given rental.

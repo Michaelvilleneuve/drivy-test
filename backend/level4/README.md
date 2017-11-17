@@ -1,3 +1,11 @@
+## Instructions
+
+`bundle install`
+`ruby main.rb`
+
+To run tests
+`rspec specs/*.spec.rb`
+
 # Level 4
 
 In case of an accident we apply a €800 [deductible](http://en.wikipedia.org/wiki/Deductible).
