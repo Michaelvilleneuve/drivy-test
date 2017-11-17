@@ -8,6 +8,6 @@ class Base
   protected
 
   def self.all(element)
-    @@list.select { |object| object.is_a? element }
+    @@list.select { |object| object.is_a?(element) }
   end
 end

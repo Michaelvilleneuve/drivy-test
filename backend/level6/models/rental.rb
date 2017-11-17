@@ -5,7 +5,8 @@ require 'date'
 class Rental < Base
   include Days
   include Prices
-  attr_reader :commission, :payments, :id, :params
+
+  attr_reader :commission, :payments, :id, :params, :start_date
 
   DEDUCTIBLE_COST_PER_DAY = 400
 
@@ -32,10 +33,7 @@ class Rental < Base
   end
 
   def pretty
-    { 
-      id: @id, 
-      actions: @payments
-    }
+    { id: @id, actions: @payments }
   end
 
   def self.find(a_rental_id)

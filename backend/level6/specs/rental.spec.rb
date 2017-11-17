@@ -2,10 +2,10 @@ Dir["./models/*.rb"].each { |file| require file }
 
 describe Rental do
   before do
-    @car = Car.new({'id' => 1, 'price_per_day' => 2000, 'price_per_km' => 10 })
+    @car = Car.new({'id' => 456, 'price_per_day' => 2000, 'price_per_km' => 10 })
     @rental = Rental.new({ 
-      'id' => 1, 
-      'car_id' => 1, 
+      'id' => 456, 
+      'car_id' => 456, 
       'start_date' => '2017-12-8', 
       'end_date' => '2017-12-9',
       'distance' => 100 
