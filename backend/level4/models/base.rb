@@ -7,11 +7,7 @@ class Base
 
   protected
 
-  def self.all_cars
-    @@list.select { |object| object.is_a? Car }
-  end
-
-  def self.all_rentals
-    @@list.select { |object| object.is_a? Rental }
+  def self.all(element)
+    @@list.select { |object| object.is_a?(element) }
   end
 end

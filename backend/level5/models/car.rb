@@ -17,6 +17,6 @@ class Car < Base
 
 
   def self.find(a_car_id)
-    self.all_cars.find { |car| car.id == a_car_id }
+    self.all(Car).find { |car| car.id == a_car_id }
   end
 end
