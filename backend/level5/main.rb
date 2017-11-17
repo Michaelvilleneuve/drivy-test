@@ -5,9 +5,9 @@ require 'json/ext'
 
 class Main
   def initialize input
-    @data = JSON.parse File.read(input)
-    @cars = @data['cars'].map { |car| Car.new(car) }
-    @rentals = @data['rentals'].map { |rental| Rental.new(rental) }
+    data = JSON.parse File.read(input)
+    @cars = data['cars'].map { |car| Car.new(car) }
+    @rentals = data['rentals'].map { |rental| Rental.new(rental) }
   end
 
   def generate_output
