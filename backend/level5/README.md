@@ -1,9 +1,12 @@
 ## Instructions
 
+First run
 `bundle install`
+
+Then
 `ruby main.rb`
 
-To run tests
+If your want to run the tests run from here
 `rspec specs/*.spec.rb`
 
 # Level 5
