@@ -4,8 +4,8 @@ class Rental < Base
 
   def initialize(rental)
     @id         = rental['id']
-    @start_date = rental['start_date']
-    @end_date   = rental['end_date']
+    @start_date = Date.parse(rental['start_date'])
+    @end_date   = Date.parse(rental['end_date'])
     @distance   = rental['distance']
     @car = Car.find rental['car_id']
     super
@@ -20,7 +20,7 @@ class Rental < Base
   end
 
   def nb_of_days
-    (Date.parse(@end_date).to_time.to_i - Date.parse(@start_date).to_time.to_i) / 86400 + 1
+    (@end_date - @start_date).to_i + 1
   end
 
   def price_of_days
