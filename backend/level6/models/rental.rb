@@ -29,7 +29,7 @@ class Rental < Base
 
   def update(rental, payments)
     set_values rental
-    @payments = payments
+    @payments = @payments + payments
   end
 
   def pretty
