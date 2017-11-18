@@ -1,5 +1,5 @@
-require_relative 'concerns/payments/adjuster'
-require_relative 'concerns/payments/processor'
+require_relative 'concerns/payment/adjuster'
+require_relative 'concerns/payment/processor'
 require_relative 'pretty/payment'
 
 class Payment
