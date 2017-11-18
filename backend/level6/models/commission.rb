@@ -1,4 +1,8 @@
+require_relative 'pretty/commission'
+
 class Commission < Base
+  include PrettyCommission
+
   attr_reader :total
   RATE_PERCENTAGE = 0.7
 
@@ -21,14 +25,6 @@ class Commission < Base
 
   def remaining_for_owner
     (@rental.price_without_deductible - @total).to_i
-  end
-
-  def pretty
-    {
-      insurance_fee: to_insurance,
-      assistance_fee: to_assistance,
-      drivy_fee: to_drivy
-    }
   end
 
   def method_missing(method, *args, &block)  

@@ -1,7 +1,10 @@
 require 'date'
 require 'active_support/core_ext/hash/except'
+require_relative 'pretty/rental_modification'
 
 class RentalModification < Base
+  include PrettyRentalModification
+
   def initialize(modification)
     @id     = modification['id']
     @params = modification
@@ -15,13 +18,5 @@ class RentalModification < Base
     @rental.update(@params.except('id', 'rental_id'), @payments)
     temporary_rental.destroy
     self
-  end
-
-  def pretty
-    {
-      id: @id,
-      rental_id: @rental.id,
-      actions: @payments.map { |action| action.pretty }
-    } 
   end
 end
