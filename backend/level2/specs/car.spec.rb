@@ -1,6 +1,6 @@
 Dir["./models/*.rb"].each { |file| require file }
 
-describe Rental do
+describe Car do
   before do
     @car = Car.new({'id' => 1, 'price_per_day' => 100, 'price_per_km' => 10 })
   end
