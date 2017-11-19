@@ -12,9 +12,9 @@ class Rental < Base
     @end_date   = Date.parse(rental['end_date'])
     @start_date = Date.parse(rental['start_date'])
 
-    @car = Car.find rental['car_id']
-    @commission = Commission.new self
-    @payments = Payment.process self
+    @car = Car.find(rental['car_id'])
+    @commission = Commission.new(self)
+    @payments = Payment.process(self)
     super
   end
 
@@ -49,7 +49,7 @@ class Rental < Base
   def pretty
     { 
       id: @id, 
-      actions: @payments.map { |payment| payment.redeem }
+      actions: @payments.map(&:redeem)
     }
   end
 end

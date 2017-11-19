@@ -12,8 +12,8 @@ class Rental < Base
     @end_date   = Date.parse(rental['end_date'])
     @start_date = Date.parse(rental['start_date'])
 
-    @car = Car.find rental['car_id']
-    @commission = Commission.new self
+    @car = Car.find(rental['car_id'])
+    @commission = Commission.new(self)
     super
   end
 

@@ -11,7 +11,7 @@ class Main
   end
 
   def generate_output
-    File.write 'output.json', JSON.pretty_generate({ rentals: @rentals.map { |r| r.pretty } })
+    File.write 'output.json', JSON.pretty_generate({ rentals: @rentals.map(&:pretty) })
   end
 end
 

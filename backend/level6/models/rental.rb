@@ -16,14 +16,14 @@ class Rental < Base
 
   def initialize(rental)
     @id = rental['id']
-    @car = Car.find rental['car_id']
-    set_values rental
-    @payments = Payment.process(self).map { |payment| payment.redeem }
+    @car = Car.find(rental['car_id'])
+    set_values(rental)
+    @payments = Payment.process(self).map(&:redeem)
     super
   end
 
   def update(rental, payments)
-    set_values rental
+    set_values(rental)
     @payments = @payments + payments
   end
 

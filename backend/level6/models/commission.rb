@@ -28,7 +28,7 @@ class Commission < Base
   end
 
   def method_missing(method, *args, &block)  
-    if method.to_s.start_with? "to_"
+    if method.to_s.start_with?("to_")
       raise "`#{method[3..-1]}` is not one of the commission receivers" 
     else
       raise ArgumentError.new("Method `#{method}` doesn't exist.")
