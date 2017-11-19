@@ -8,7 +8,7 @@ class Rental < Base
   def initialize(rental)
     @id         = rental.fetch('id')
     @distance   = rental.fetch('distance')
-    @deductible = rental['deductible_reduction']
+    @deductible = rental.fetch('deductible_reduction', false)
     @end_date   = Date.parse(rental.fetch('end_date'))
     @start_date = Date.parse(rental.fetch('start_date'))
 
