@@ -14,6 +14,10 @@ describe RentalModification do
     @rental_modification = RentalModification.new({ 'id' => 124, 'rental_id' => 321, 'start_date' => '2017-12-6' })
   end
 
+  it "should raise proper error if keys are missing" do
+    expect { RentalModification.new({ 'id' => 124 }) }.to raise_error KeyError
+  end
+
   it "should update rental price according to new values" do
     @same_rental = Rental.new({ 
       'id' => 322, 

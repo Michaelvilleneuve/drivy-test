@@ -6,13 +6,13 @@ class Rental < Base
   DEDUCTIBLE_COST_PER_DAY = 400
 
   def initialize(rental)
-    @id         = rental['id']
-    @distance   = rental['distance']
+    @id         = rental.fetch('id')
+    @distance   = rental.fetch('distance')
     @deductible = rental['deductible_reduction']
-    @end_date   = Date.parse(rental['end_date'])
-    @start_date = Date.parse(rental['start_date'])
+    @end_date   = Date.parse(rental.fetch('end_date'))
+    @start_date = Date.parse(rental.fetch('start_date'))
 
-    @car = Car.find(rental['car_id'])
+    @car = Car.find(rental.fetch('car_id'))
     @commission = Commission.new(self)
     super
   end

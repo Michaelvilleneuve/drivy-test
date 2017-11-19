@@ -3,11 +3,11 @@ require 'date'
 class Rental < Base
 
   def initialize(rental)
-    @id         = rental['id']
-    @start_date = Date.parse(rental['start_date'])
-    @end_date   = Date.parse(rental['end_date'])
-    @distance   = rental['distance']
-    @car = Car.find(rental['car_id'])
+    @id         = rental.fetch('id')
+    @start_date = Date.parse(rental.fetch('start_date'))
+    @end_date   = Date.parse(rental.fetch('end_date'))
+    @distance   = rental.fetch('distance')
+    @car = Car.find(rental.fetch('car_id'))
     super
   end
 

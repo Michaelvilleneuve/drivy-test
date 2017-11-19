@@ -6,9 +6,9 @@ class RentalModification < Base
   include PrettyRentalModification
 
   def initialize(modification)
-    @id     = modification['id']
+    @id     = modification.fetch('id')
     @params = modification
-    @rental = Rental.find(modification['rental_id'])
+    @rental = Rental.find(modification.fetch('rental_id'))
     super
   end
 

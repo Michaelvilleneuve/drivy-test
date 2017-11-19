@@ -5,6 +5,10 @@ describe Rental do
     @car = Car.new({'id' => 1, 'price_per_day' => 100, 'price_per_km' => 10 })
   end
 
+  it "should raise proper error if keys are missing" do
+    expect { Car.new({'id' => 1}) }.to raise_error KeyError
+  end
+
   it "should decrease price per day by 10% after 1 day" do
     expect(@car.price_on_day(2)).to eq 90
   end

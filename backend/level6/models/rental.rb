@@ -10,13 +10,14 @@ class Rental < Base
   include PrettyRental
   include RentalValuesSetter
 
-  attr_reader :commission, :payments, :id, :params, :start_date
-
   DEDUCTIBLE_COST_PER_DAY = 400
 
+  attr_reader :commission, :payments, :id, :params, :start_date
+
+
   def initialize(rental)
-    @id = rental['id']
-    @car = Car.find(rental['car_id'])
+    @id = rental.fetch('id')
+    @car = Car.find(rental.fetch('car_id'))
     set_values(rental)
     @payments = Payment.process(self).map(&:redeem)
     super

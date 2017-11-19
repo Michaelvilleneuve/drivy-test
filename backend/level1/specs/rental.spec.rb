@@ -12,6 +12,10 @@ describe Rental do
     })
   end
 
+  it "should raise proper error if keys are missing" do
+    expect { Rental.new({'distance': 100}) }.to raise_error KeyError
+  end
+
   it "should have a duration in days" do
     expect(@rental.nb_of_days).to eq 2
   end
